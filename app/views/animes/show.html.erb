@@ -21,10 +21,12 @@
   <%= link_to "Add new comment", new_anime_comment_path(@anime) %>
   <% @anime.comments.each do |comment| %>
     <div>
-      <time>Updated <%= comment.updated_at %></time>
+      <p><%= comment.user.email %></p>
+
       <p>
 	<%= comment.body %>
       </p>
+      <time>Updated <%= comment.updated_at %></time>
       <%= link_to "Edit", edit_anime_comment_path(@anime, comment) %> |
       <%= link_to "Delete", anime_comment_path(@anime, comment), method: :delete %>
     </div>

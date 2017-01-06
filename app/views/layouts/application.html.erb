@@ -9,6 +9,11 @@
   </head>
 
 <body>
+  <center>
+  <header>
+    <img id="headerbackground" src="http://wallpapercave.com/wp/hkWe2SK.jpg" alt="" />
+    <h2 id='anume'>Anume*</h2>
+  </header>
 <p class="navbar-text pull-right">
     <% if user_signed_in? %>
     Logged in as
@@ -22,7 +27,11 @@
     <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
     <% end %>
 
-
+    <audio controls volume='0.3'autoplay style="display:none;">
+      <source src="http://www.ffmages.com/ffvii/ost/disc-3/23-who-am-i.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
     <%= yield %>
   </body>
+</center>
 </html>

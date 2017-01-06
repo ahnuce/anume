@@ -10,6 +10,7 @@ class AnimesController < ApplicationController
   # GET /animes/1
   # GET /animes/1.json
   def show
+      
       @anime = Anime.find(params[:id])
       @comments = Comment.all
   end

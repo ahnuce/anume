@@ -52,4 +52,5 @@ ActiveRecord::Schema.define(version: 20170106162722) do
   end
 
   add_foreign_key "comments", "animes"
+
 end
