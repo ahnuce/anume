@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Animes</h1>
+<a href="#" id="show"><h1>ANIMES</h1></a>
 
-<table>
+<table id='hidden'>
   <thead>
     <tr>
       <th>Title</th>
@@ -18,9 +18,9 @@
         <td><%= anime.title %></td>
         <td><%= anime.episodes %></td>
         <td><%= image_tag anime.photo_url %></td>
-        <td><%= link_to 'Show', anime %></td>
-        <td><%= link_to 'Edit', edit_anime_path(anime) %></td>
-        <td><%= link_to 'Destroy', anime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button><%= link_to 'Forum', anime %></button></td>
+        <td><button><%= link_to 'Edit', edit_anime_path(anime) %></button></td>
+        <td><button><%= link_to 'Delete', anime, method: :delete, data: { confirm: 'Delete it foreal?' } %></button></td>
       </tr>
     <% end %>
   </tbody>

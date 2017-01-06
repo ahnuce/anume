@@ -19,6 +19,9 @@
 <div class='comments'>
   <h3>Comments</h3>
   <%= link_to "Add new comment", new_anime_comment_path(@anime) %>
+  <table id='table'>
+
+
   <% @anime.comments.each do |comment| %>
     <div>
       <p><%= comment.user.email %></p>
@@ -27,6 +30,8 @@
 	<%= comment.body %>
       </p>
       <time>Updated <%= comment.updated_at %></time>
+
+  </table>
       <%= link_to "Edit", edit_anime_comment_path(@anime, comment) %> |
       <%= link_to "Delete", anime_comment_path(@anime, comment), method: :delete %>
     </div>
