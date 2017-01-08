@@ -24,7 +24,7 @@ body {
   position: relative;
   background-image: url(http://wallpapercave.com/wp/hkWe2SK.jpg);
   border-style: dotted;
-  border-width: thick;
+  border-width: thin;
 }
 #anume {
   position: relative;
@@ -76,4 +76,17 @@ a:link:hover {
 
 #commentTable {
 
+}
+
+a:visited {
+  color: blue;
+}
+a {
+  color: lightblue;
+}
+h1 {
+  font-family: amarillo;
+}
+button {
+  background-color: black;
 }

@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Anume</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>Anume</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  </head>
+    </head>
 
-<body>
+    <body>
 
-  <center>
-  <header>
-    <img id="headerbackground" src="http://wallpapercave.com/wp/hkWe2SK.jpg" alt="" />
-    <h2 id='anume'>Anume*</h2>
-  </header>
-<p class="navbar-text pull-right">
-    <% if user_signed_in? %>
-    Logged in as
-    <strong><%= current_user.email %></strong>.
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-    |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
-    |
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
+        <center>
+            <header>
+                <img id="headerbackground" src="http://wallpapercave.com/wp/hkWe2SK.jpg" alt=""/>
+                <h2 id='anume'>Anume*</h2>
+            </header>
+
+            <p class="navbar-text pull-right">
+                <% if user_signed_in? %>
+                Logged in as
+                <strong><%= current_user.email %></strong>.
+                <%= link_to 'Add New Anime', new_anime_path, :class => 'navbar-link' %>
+                |
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+                |
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <% else %>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
+                |
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                <% end %>
+
+                <audio controls volume='0.2' autoplay style="display:none;">
+                    <source src="http://gamethemesongs.com/uploads/audio/Final Fantasy IX - 204 - Song Of Memories.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
 
 
-
-
-    <audio controls volume='0.3'autoplay style="display:none;">
-      <source src="http://www.ffmages.com/ffvii/ost/disc-3/23-who-am-i.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    <audio>
-    <source src="click.mp3">
-    <source src="click.ogg">
-    </audio>
-    <div id="sounddiv"><bgsound id="sound"></div>
-    <%= yield %>
-  </body>
-</center>
-</html>
+                    <%= yield %>
+                </body>
+            </center>
+        </html>
