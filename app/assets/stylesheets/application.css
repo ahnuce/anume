@@ -31,13 +31,19 @@ body {
   top: -80px;
   padding: 0;
   margin: 0 auto;
-
   font-family: precious;
   font-size: 120px;
   color: lightblue;
   text-shadow: 3px 2px white;
-
 }
+#talk {
+  position: relative;
+  top: 0px;
+  padding: 0;
+  margin: 0 auto;
+  text-decoration:underline;
+}
+
 #table {
   display: block;
 }
@@ -70,9 +76,11 @@ a:link:hover {
 
 
 .clearfix {
-
+overflow: auto;
+zoom: 1;
 
 }
+
 
 #commentTable {
 

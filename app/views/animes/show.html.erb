@@ -1,23 +1,19 @@
 <p id="notice"><%= notice %></p>
 <%= link_to 'Edit Anime', edit_anime_path(@anime) %>
 |
-<%= link_to 'Back to Home', animes_path %>
-<div style='float:none; width:20%;'>
+<%= link_to 'Back to Home', animes_path(@anime) %>
+<div style='width:20%;'>
     <p>
-        <h1>
-            <%= @anime.title.upcase %>
+        <h1 style="font-family:blacksword;">
+            <%= @anime.title %>
           </h1>
     </p>
 
     <p>
         <strong>Episodes:</strong>
-        <%= @anime.episodes %>
-    </p>
-
-    <div style="border-style:solid;">
+        <%= @anime.episodes %><br>
         <%= image_tag @anime.photo_url %>
-    </div>
-
+</p>
 
 
 
