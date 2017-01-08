@@ -6,9 +6,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
 <body>
+
   <center>
   <header>
     <img id="headerbackground" src="http://wallpapercave.com/wp/hkWe2SK.jpg" alt="" />
@@ -27,10 +29,18 @@
     <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
     <% end %>
 
+
+
+
     <audio controls volume='0.3'autoplay style="display:none;">
       <source src="http://www.ffmages.com/ffvii/ost/disc-3/23-who-am-i.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
+    <audio>
+    <source src="click.mp3">
+    <source src="click.ogg">
+    </audio>
+    <div id="sounddiv"><bgsound id="sound"></div>
     <%= yield %>
   </body>
 </center>

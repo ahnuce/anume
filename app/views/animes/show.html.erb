@@ -1,44 +1,54 @@
 <p id="notice"><%= notice %></p>
+<div style='float:left; width:20%;'>
+    <p>
+        <strong>||
+            <%= @anime.title.upcase %>
+            ||</strong>
+    </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @anime.title %>
-</p>
+    <p>
+        <strong>Episodes:</strong>
+        <%= @anime.episodes %>
+    </p>
 
-<p>
-  <strong>Episodes:</strong>
-  <%= @anime.episodes %>
-</p>
-
-<p>
-
-  <%= image_tag @anime.photo_url %>
-</p>
-
-
-<div class='comments'>
-  <h3>Comments</h3>
-  <%= link_to "Add new comment", new_anime_comment_path(@anime) %>
-  <table id='table'>
-
-
-  <% @anime.comments.each do |comment| %>
-    <div>
-      <p><%= comment.user.email %></p>
-
-      <p>
-	<%= comment.body %>
-      </p>
-      <time>Updated <%= comment.updated_at %></time>
-
-  </table>
-      <%= link_to "Edit", edit_anime_comment_path(@anime, comment) %> |
-      <%= link_to "Delete", anime_comment_path(@anime, comment), method: :delete %>
+    <div style="border-style:solid;">
+        <%= image_tag @anime.photo_url %>
     </div>
-  <% end %>
+
 </div>
 
+<div style='float:right; width:30%;' class='comments'>
+
+  <!-- begin wwww.htmlcommentbox.com -->
+ <div id="HCB_comment_box" style='color:lightblue;'><a href="http://ahnuce.github.io">Comment Box</a> is loading comments...</div>
+ <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+ <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1483839138649");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+ </div>
+<!-- end www.htmlcommentbox.com -->
+
+    <!-- <h3>Comments</h3>
+    <table id='table'>
+
+        <% @anime.comments.each do |comment| %>
+        <div>
+            <%= comment.user.email %>
+            <time>
+                Updated
+                <%= comment.updated_at %></time><br>
+        <div id='commentTable' <%= comment.body %></div>
+    </table>
 
 
-<%= link_to 'Edit', edit_anime_path(@anime) %> |
-<%= link_to 'Back', animes_path %>
+    <%= link_to "Edit Comment", edit_anime_comment_path(@anime, comment) %>
+    |
+    <%= link_to "Delete Comment", anime_comment_path(@anime, comment), method: :delete %>
+</div>
+<% end %>
+</div>
+-->
+<footer>
+  <%= link_to "Add new comment", new_anime_comment_path(@anime) %> |
+<%= link_to 'Edit Anime', edit_anime_path(@anime) %>
+|
+<%= link_to 'Back to Home', animes_path %>
+</footer>

@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
+<div style="float:left; width:30%;">
+
 
 <a href="#" id="show"><h1>ANIMES</h1></a>
 
-<table id='hidden'>
+<table class='clearfix' id='hidden'>
   <thead>
     <tr>
       <th>Title</th>
@@ -20,12 +22,17 @@
         <td><%= image_tag anime.photo_url %></td>
         <td><button><%= link_to 'Forum', anime %></button></td>
         <td><button><%= link_to 'Edit', edit_anime_path(anime) %></button></td>
-        <td><button><%= link_to 'Delete', anime, method: :delete, data: { confirm: 'Delete it foreal?' } %></button></td>
+        <td><button><%= link_to 'Delete', anime, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
+<div style="float:right; width:40%; ">
+<a href="#" id="show2"><h1>Click here to see if you love anime</h1></a>
+<br>
+<iframe id='hidden2' width="300" height="300" src="https://www.youtube.com/embed/zWmmgwZ1ECU" frameborder="0"  allowfullscreen></iframe>
+</div>
 
-<%= link_to 'New Anime', new_anime_path %>
+</div>

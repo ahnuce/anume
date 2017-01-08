@@ -23,7 +23,8 @@ body {
   width: 100%;
   position: relative;
   background-image: url(http://wallpapercave.com/wp/hkWe2SK.jpg);
-  border-style: solid;
+  border-style: dotted;
+  border-width: thick;
 }
 #anume {
   position: relative;
@@ -46,4 +47,33 @@ table, td {
 }
 #hidden {
   display: none;
+}
+#hidden2 {
+  display: none;
+}
+#headerbackground:hover {
+  border-width: thick;
+  border-style: solid;
+  border-color: lightblue;
+}
+
+a:link:hover {
+  color: lightblue;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+
+}
+
+
+.clearfix {
+
+
+}
+
+#commentTable {
+
 }
