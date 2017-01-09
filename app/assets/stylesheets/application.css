@@ -25,6 +25,10 @@ body {
   background-image: url(http://wallpapercave.com/wp/hkWe2SK.jpg);
   border-style: dotted;
   border-width: thin;
+
+
+
+
 }
 #anume {
   position: relative;
@@ -50,7 +54,10 @@ body {
 table, td {
   border-style: outset;
   border: 1px solid white;
+
+
 }
+
 #hidden {
   display: none;
 }
@@ -61,6 +68,15 @@ table, td {
   border-width: thick;
   border-style: solid;
   border-color: lightblue;
+
+
+
+  -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
 }
 
 a:link:hover {
@@ -87,14 +103,34 @@ zoom: 1;
 }
 
 a:visited {
-  color: blue;
+  color: white;
 }
 a {
   color: lightblue;
+  height: 100px;
+  width: 100px;
 }
 h1 {
   font-family: amarillo;
+  font-size: 40px;
+}
+
+h1:hover {
+  text-shadow: 2px 2px white;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+
 }
 button {
   background-color: black;
+  height: 30px;
+  width: 50px;
+}
+
+td img {
+  height: 175px;
+  width: 175px;
 }

@@ -15,8 +15,12 @@
             <header>
                 <img id="headerbackground" src="http://wallpapercave.com/wp/hkWe2SK.jpg" alt=""/>
                 <h2 id='anume'>Anume*</h2>
-                <h2 id='talk' style="font-family:amarillo;text-shadow:1px 1px lightblue;">Lets Talk Anime</h2>
+
             </header>
+
+
+
+
 
             <p class="navbar-text pull-right">
                 <% if user_signed_in? %>
@@ -33,13 +37,25 @@
                 <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
                 <% end %>
 
+                <%= form_tag(animes_path, :method => "get", id: "search-form") do %>
+                <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+                <%= submit_tag "Search" %>
+                <% end %>
+                <br>
+
+          <% if @animes.present? %>
+            <%= yield %>
+          <% else %>
+            <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+          <% end %>
+
                 <audio controls volume='0.2' autoplay style="display:none;">
                     <source src="http://gamethemesongs.com/uploads/audio/Final Fantasy IX - 204 - Song Of Memories.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
 
 
-                    <%= yield %>
+
                 </body>
             </center>
         </html>

@@ -1,16 +1,20 @@
+          <h2 id='talk' style="font-family:amarillo;text-shadow:1px 1px lightblue;">Lets Talk Anime</h2>
+          <br>
+  
 <p id="notice"><%= notice %></p>
+
 <div style="float:left; width:30%;">
 
 
-<a href="#" id="show"><h1>show animes</h1></a>
+<a href="#" id="show" data-transition="slide"><h1>Show Animes?</h1></a>
 
 <table class='clearfix' id='hidden'>
   <thead>
     <tr>
       <th>Title</th>
       <th>Episodes</th>
-      <th>Photo url</th>
-      <th colspan="3"></th>
+      <th></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -20,19 +24,21 @@
         <td><%= anime.title %></td>
         <td><%= anime.episodes %></td>
         <td><%= image_tag anime.photo_url %></td>
-        <td><button><%= link_to 'Forum', anime %></button></td>
-        <td><button><%= link_to 'Edit', edit_anime_path(anime) %></button></td>
-        <td><button><%= link_to 'Delete', anime, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <td>
+          <button><%= link_to 'Forum', anime %></button>
+          <button><%= link_to 'Edit', edit_anime_path(anime) %></button>
+          <button><%= link_to 'Delete', anime, method: :destroy, data: { confirm: 'Are you sure?' } %></button>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
 <br>
-<div style="float:right; width:40%; ">
-<a href="#" id="show2"><h1>Click here to see if you love anime</h1></a>
+<div style="float:right; width:30%; ">
+<a href="#" id="show2"><h1>Love anime?</h1></a>
 <br>
-<iframe id='hidden2' width="300" height="300" src="https://www.youtube.com/embed/zWmmgwZ1ECU" frameborder="0"  allowfullscreen></iframe>
+<iframe id='hidden2' width="400" height="500" src="https://www.youtube.com/embed/zWmmgwZ1ECU" frameborder="0"  allowfullscreen></iframe>
 </div>
 
 </div>

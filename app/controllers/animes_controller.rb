@@ -1,5 +1,5 @@
 class AnimesController < ApplicationController
-  before_action :set_anime, only: [:show, :edit, :update, :destroy]
+  before_action :set_anime, only: [:show, :edit, :update, :destroy, :delete]
 
   # GET /animes
   # GET /animes.json
@@ -10,7 +10,7 @@ class AnimesController < ApplicationController
   # GET /animes/1
   # GET /animes/1.json
   def show
-      
+
       @anime = Anime.find(params[:id])
       @comments = Comment.all
   end
@@ -54,12 +54,30 @@ class AnimesController < ApplicationController
     end
   end
 
+
+  def index
+    @animes = Anime.all
+    if params[:search]
+      @animes = Anime.search(params[:search].capitalize).order("created_at DESC")
+    else
+      @animes = Anime.all.order('created_at DESC')
+    end
+  end
   # DELETE /animes/1
   # DELETE /animes/1.json
   def destroy
+        @anime = Anime.find(params[:id])
     @anime.destroy
     respond_to do |format|
       format.html { redirect_to animes_url, notice: 'Anime was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+  def delete
+        @anime = Anime.find(params[:id])
+    @anime.delete
+    respond_to do |format|
+      format.html { redirect_to animes_url, notice: 'Anime was successfully deleted.' }
       format.json { head :no_content }
     end
   end

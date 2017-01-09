@@ -2,24 +2,31 @@
 <%= link_to 'Edit Anime', edit_anime_path(@anime) %>
 |
 <%= link_to 'Back to Home', animes_path(@anime) %>
-<div style='width:20%;'>
-    <p>
-        <h1 style="font-family:blacksword;">
-            <%= @anime.title %>
-          </h1>
-    </p>
+<br>
+<h1 style="font-family:blacksword;justify-content:center;">
+    <%= @anime.title %>
+  </h1>
+<br>
+<div style='float:left; width:35%;'>
+
+
+
 
     <p>
         <strong>Episodes:</strong>
-        <%= @anime.episodes %><br>
-        <%= image_tag @anime.photo_url %>
+        <%= @anime.episodes %>
+        <br>
+        <p id='picture'><%= image_tag @anime.photo_url %></p>
 </p>
 
 
 
 </div>
 <br>
-<div style='float:none; width:60%; border-style:solid;' class='comments'>
+
+
+
+<div style='float:right; width:50%; border-style:solid;' class='comments'>
   <!-- begin wwww.htmlcommentbox.com -->
    <div id="HCB_comment_box" style="background-image:url('http://img08.deviantart.net/ceee/i/2013/338/f/7/star_custom_box_background_by_astro_xxx_boy-d6wr83j.jpg');background-size:cover;background-repeat:no-repeat;"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
    <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
