@@ -116,7 +116,7 @@ h1 {
 }
 
 h1:hover {
-  text-shadow: 2px 2px white;
+  text-shadow: 2px 2px lightblue;
 }
 
 h2 {
@@ -124,7 +124,7 @@ h2 {
   margin: 0;
 
 }
-button {
+.button1 {
   background-color: black;
   height: 30px;
   width: 50px;

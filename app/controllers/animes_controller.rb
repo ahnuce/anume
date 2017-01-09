@@ -22,6 +22,7 @@ class AnimesController < ApplicationController
 
   # GET /animes/1/edit
   def edit
+
   end
 
   # POST /animes
@@ -59,6 +60,7 @@ class AnimesController < ApplicationController
     @animes = Anime.all
     if params[:search]
       @animes = Anime.search(params[:search].capitalize).order("created_at DESC")
+
     else
       @animes = Anime.all.order('created_at DESC')
     end

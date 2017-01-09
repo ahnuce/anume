@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(function() {
+$(function () {
   $('a#show').click(function(event){
     event.preventDefault();
     $('#hidden').toggle();
