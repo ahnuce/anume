@@ -1,7 +1,16 @@
-<h2 id='talk' style="font-family:amarillo;text-shadow:1px 1px lightblue;">Lets Talk Anime</h2>
+
           <br>
           <% if @animes.present? || !user_signed_in? || @anime.present? %>
+            <%= form_tag(animes_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+            <%= submit_tag "Search" %>
+            <% end %>
 
+            <div class="w3-center w3-half">
+            <a href="#" id="show2"><h3>Click here for Anime Video</h3></a>
+            <br>
+            <iframe id='hidden2' width="400" height="500" src="https://www.youtube.com/embed/zWmmgwZ1ECU" frameborder="0"  allowfullscreen></iframe>
+            </div>
           <%= yield %>
           <% else %>
           <%= yield %>
@@ -10,10 +19,10 @@
           <% end %>
 <p id="notice"><%= notice %></p>
 
-<div style="float:left; width:30%;">
+<div class="w3-row w3-half">
 
 
-<a href="#" id="show" data-transition="slide"><h1>Show Animes?</h1></a>
+<a href="#" id="show" data-transition="slide"><h1>Anime List</h1></a>
 
 <table class='clearfix' id='hidden'>
   <thead>
@@ -41,11 +50,7 @@
   </tbody>
 </table>
 </div>
-
-<div style="float:right; width:30%; ">
-<a href="#" id="show2"><h1>Love Anime?</h1></a>
 <br>
-<iframe id='hidden2' width="400" height="500" src="https://www.youtube.com/embed/zWmmgwZ1ECU" frameborder="0"  allowfullscreen></iframe>
-</div>
-
-</div>
+<footer>
+  <h5>Created by Anusone Nanthavongsa</h5>
+</footer>

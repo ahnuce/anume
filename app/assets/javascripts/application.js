@@ -25,5 +25,6 @@ $(function() {
   $('a#show2').click(function(event){
     event.preventDefault();
     $('#hidden2').toggle();
+  
   });
 });

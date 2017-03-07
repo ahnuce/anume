@@ -3,59 +3,44 @@
     <head>
         <title>Anume</title>
         <%= csrf_meta_tags %>
-
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     </head>
-
+    <center>
     <body>
-
-        <center>
             <header>
                 <img id="headerbackground" src="http://wallpapercave.com/wp/hkWe2SK.jpg" alt=""/>
                 <h2 id='anume'>Anume*</h2>
-
+                <h2 id='talk' style="font-family:amarillo;text-shadow:1px 1px lightblue;">Lets Talk Anime</h2>
             </header>
-
-
-
-
-
             <p class="navbar-text pull-right">
                 <% if user_signed_in? %>
                 Logged in as
-                <strong><%= current_user.email %></strong>.
+                <strong style="text-shadow:1px 1px blue;color:white"><%= current_user.email.upcase %></strong>
+                <br>
+                |
+                <%= link_to 'Home', animes_path, :class => 'navbar-link' %>
+                |
                 <%= link_to 'Add New Anime', new_anime_path, :class => 'navbar-link' %>
                 |
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
                 |
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-                  <p>* AFTER SEARCH CLICK -SHOW ANIMES- TO VIEW *</p>
+
             <% else %>
                 <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
                 |
                 <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
                 <% end %>
 
-                <%= form_tag(animes_path, :method => "get", id: "search-form") do %>
-                <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-                <%= submit_tag "Search" %>
-                <% end %>
-
                 <br>
-
-
                 <%= yield %>
-
-
                 <audio controls volume='0.2' autoplay style="display:none;">
                     <source src="http://gamethemesongs.com/uploads/audio/Final Fantasy IX - 204 - Song Of Memories.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
 
+    </body>
 
-
-                </body>
-            </center>
-        </html>
+    </center>
+    </html>

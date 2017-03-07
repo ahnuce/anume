@@ -10,7 +10,10 @@
 |
 <%= link_to 'Back to Home', animes_path(@anime) %>
 <br>
-
+<%= form_tag(animes_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
 <div style='float:left; width:35%;'>
 
 
@@ -35,28 +38,5 @@
    <div id="HCB_comment_box" style="background-image:url('http://eskipaper.com/images/dark-anime-4.jpg');background-size:cover;background-repeat:no-repeat;"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
    <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
    <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24r2nbL2D7iLfT.1UgnjIgq0"+"&opts=16790&num=10&ts=1483842435523");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
-  <!-- end www.htmlcommentbox.com -->
+
  </div>
-
-
-    <!-- <h3>Comments</h3>
-    <table id='table'>
-
-        <% @anime.comments.each do |comment| %>
-        <div>
-            <%= comment.user.email %>
-            <time>
-                Updated
-                <%= comment.updated_at %></time><br>
-        <div id='commentTable' <%= comment.body %></div>
-    </table>
-
-
-    <%= link_to "Edit Comment", edit_anime_comment_path(@anime, comment) %>
-    |
-    <%= link_to "Delete Comment", anime_comment_path(@anime, comment), method: :delete %>
-</div>
-<% end %>
-</div>
-  <%= link_to "Add new comment", new_anime_comment_path(@anime) %> |
--->
